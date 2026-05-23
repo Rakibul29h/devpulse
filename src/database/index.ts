@@ -6,6 +6,7 @@ export const pool = new Pool({
 });
 
 export const initDB = async () => {
+ 
   try {
     await pool.query(`
         CREATE TABLE IF NOT EXISTS users(
@@ -41,6 +42,8 @@ export const initDB = async () => {
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
         `);
+
+        console.log("Data base connected successfully")
   } catch (error) {
     console.log(error);
   }
